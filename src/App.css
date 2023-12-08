@@ -40,3 +40,20 @@
 .read-the-docs {
   color: #888;
 }
+
+.bordered-table {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #0515f9;
+}
+
+.bordered-table th,
+.bordered-table td {
+  border: 5px solid #0426fe;
+  padding: 8px;
+}
+
+.bordered-table th {
+  background-color: #035df9;
+}
+
