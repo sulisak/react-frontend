@@ -1,0 +1,22 @@
+/* styles.css */
+
+.bordered-table {
+ border-collapse: collapse;
+ width: 100%;
+ border: 1px solid #ccc;
+}
+
+.bordered-table th,
+.bordered-table td {
+ border: 1px solid #032cf9;
+ padding: 8px;
+}
+
+.bordered-table th {
+ background-color: #e4e5e8;
+}
+.h1 {
+ font-size: 20px;
+ line-height: 0.8;
+ text-align: center;
+}
