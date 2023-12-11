@@ -1,43 +1,40 @@
-// import './styles.css';
+
+
 import React, { useState, useEffect } from "react";
 import "./assets/styles.css";
+import CreateProduct from "./components/CreateProduct";
+
 export default function App() {
   const [users, setUsers] = useState([]);
-  useEffect(() => {
-    console.log(import.meta.env.VITE_API);
 
+  useEffect(() => {
+    // Fetch the API data
     fetch(import.meta.env.VITE_API + "/buy_details")
       .then((res) => res.json())
       .then((result) => {
         setUsers(result);
         console.log(result);
+      })
+      .catch((error) => {
+        console.error("Error fetching API data:", error);
       });
   }, []);
+
+
+
   return (
+
     <div>
       <h1 className="h1">Buy details</h1>
-      <table
-        className="bordered-table"
-        style={{
-          borderCollapse: "solid",
-          width: "100%",
-          border: "2px solid blue",
-          textAlign: "center",
-        }}
-      >
-        <thead
-          style={{
-            borderCollapse: "solid",
-            width: "100%",
-            border: "1px solid blue",
-            textAlign: "center",
-          }}
-        >
+
+      <table className="bordered-table">
+        <thead>
           <tr>
             <th>Id</th>
             <th>Buyer name</th>
-            <th>User buy email</th>
+            <th>Buyer telephone</th>
             <th>Buy Product name</th>
+            <th>Buy Product price</th>
           </tr>
         </thead>
         <tbody>
@@ -45,12 +42,19 @@ export default function App() {
             <tr key={buy.id}>
               <td>{buy.id}</td>
               <td>{buy.username}</td>
-              <td>{buy.useremail}</td>
+              <td>{buy.uertel}</td>
               <td>{buy.product}</td>
+              <td>{buy.product_price}</td>
             </tr>
           ))}
         </tbody>
       </table>
     </div>
+    
+    
   );
+
+ 
+    
+  
 }
